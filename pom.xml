@@ -65,11 +65,11 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<!--<distributionManagement>
+	<distributionManagement>
 		<repository>
 			<id>github</id>
 			<name>GitHub eabadillom Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/eabadillom/FacturmaClient</url>
+			<url>https://maven.pkg.github.com/eabadillom/JavaZip</url>
 		</repository>
-	</distributionManagement>-->
+	</distributionManagement>
 </project>
