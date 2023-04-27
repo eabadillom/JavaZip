@@ -14,24 +14,20 @@ import org.apache.logging.log4j.Logger;
 import com.eabm.model.JZFile;
 import com.eabm.tools.IOTools;
 
-public class CompressLogic {
+public class JZCompressor {
 	
 	private static Logger log = LogManager.getLogger();
 	
 	private List<JZFile> jzFileList = null;
 	
-	public CompressLogic() {
+	public JZCompressor() {
 		this.jzFileList = new ArrayList<JZFile>();
 	}
-
-	public List<JZFile> getJzFileList() {
-		return jzFileList;
-	}
-
-	public void setJzFileList(List<JZFile> jzFileList) {
-		this.jzFileList = jzFileList;
-	}
 	
+	public void add(JZFile file) {
+		this.jzFileList.add(file);
+	}
+
 	public byte[] compress() {
 		byte[] zipFile = null;
 		
@@ -66,6 +62,7 @@ public class CompressLogic {
 		} finally {
 			IOTools.close(output);
 			IOTools.close(zipOutput);
+			this.jzFileList.clear();
 		}
 		
 		return zipFile;
